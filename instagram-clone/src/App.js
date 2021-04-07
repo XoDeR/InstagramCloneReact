@@ -1,8 +1,24 @@
 import React from "react";
+import { useState } from "react";
 import "./App.css";
 import Post from "./Post";
 
 function App() {
+  const [posts, setPosts] = useState([
+    {
+      username: "JohnDoe",
+      caption: "Wow, it works!",
+      imageUrl:
+        "https://cdn-media-1.freecodecamp.org/images/xn6oqsiP9ZUwYN98Yidh-Obr7UhkAHHqcFvh",
+    },
+    {
+      username: "JohnDoe",
+      caption: "Wow, it works!",
+      imageUrl:
+        "https://cdn-media-1.freecodecamp.org/images/xn6oqsiP9ZUwYN98Yidh-Obr7UhkAHHqcFvh",
+    },
+  ]);
+
   return (
     <div className="App">
       <div className="app__header">
@@ -15,13 +31,13 @@ function App() {
 
       <h1>Instagram Clone</h1>
 
-      <Post
-        username="JohnDoe"
-        caption="Wow, it works!"
-        imageUrl="https://cdn-media-1.freecodecamp.org/images/xn6oqsiP9ZUwYN98Yidh-Obr7UhkAHHqcFvh"
-      />
-      <Post username="MikeBoo" caption="Cope!" />
-      <Post username="AliceSue" caption="This is a fun project!" />
+      {posts.map((post) => (
+        <Post
+          username={post.username}
+          caption={post.caption}
+          imageUrl={post.imageUrl}
+        />
+      ))}
     </div>
   );
 }
