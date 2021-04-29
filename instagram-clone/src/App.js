@@ -102,6 +102,11 @@ function App() {
 
   return (
     <div className="app">
+      {/* TODO */}
+      {/* Caption input */}
+      {/* File picker */}
+      {/* Post button */}
+
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <form className="app__signup">
